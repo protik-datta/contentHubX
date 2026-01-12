@@ -29,13 +29,17 @@ export class LoginController {
     }
 
     try {
-      const user = this.authService.login(username, password);
+      const user = await this.authService.login(username, password);
 
       if (user) {
-        showToast(`Welcome ${user.firstName}`, "success");
+        showToast(`Welcome ${user.username}`, "success");
         setTimeout(() => {
-          window.location.assign("profile.html");
-        }, 1000);
+          window.location.replace("profile.html");
+        }, 500);
+      }
+
+      if(this.authService.isLoggedIn()){
+        window.location.replace("profile.html");
       }
     } catch (error) {
       showToast(`${error.message}`, "error");
