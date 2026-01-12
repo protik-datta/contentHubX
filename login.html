@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ContentHub X | Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            animation: {
+              fade: "fadeIn 1s ease-out",
+              float: "float 6s ease-in-out infinite",
+            },
+            keyframes: {
+              fadeIn: {
+                "0%": { opacity: 0, transform: "translateY(20px)" },
+                "100%": { opacity: 1, transform: "translateY(0)" },
+              },
+              float: {
+                "0%,100%": { transform: "translateY(0)" },
+                "50%": { transform: "translateY(-10px)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+
+  <body
+    class="min-h-screen bg-zinc-950 text-zinc-100 flex items-center justify-center"
+  >
+    <!-- Toast container -->
+    <div
+      id="toast-container"
+      class="fixed bottom-5 right-5 flex flex-col gap-3 z-50"
+    ></div>
+
+    <main
+      class="max-w-6xl w-full px-6 grid md:grid-cols-2 gap-12 items-center animate-fade"
+    >
+      <!-- LEFT CONTENT -->
+      <section>
+        <h1 class="text-4xl md:text-5xl font-bold leading-tight">
+          ContentHub <span class="text-indigo-400">X</span>
+        </h1>
+
+        <p class="mt-4 text-zinc-400 max-w-md">
+          A premium platform where insightful blogs and curated recipes live
+          together. Login to explore stories and flavors.
+        </p>
+
+        <!-- VISUAL CARDS -->
+        <div class="mt-8 grid grid-cols-2 gap-4">
+          <!-- Blog Card -->
+          <div
+            class="bg-zinc-900 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition transform duration-500 animate-float"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f"
+              alt="Blog"
+              class="h-36 w-full object-cover"
+            />
+            <div class="p-4">
+              <p class="text-sm text-zinc-400">BLOG</p>
+              <h3 class="font-semibold">Stories & Articles</h3>
+            </div>
+          </div>
+
+          <!-- Recipe Card -->
+          <div
+            class="bg-zinc-900 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition transform duration-500 animate-float"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1504674900247-0877df9cc836"
+              alt="Recipe"
+              class="h-36 w-full object-cover"
+            />
+            <div class="p-4">
+              <p class="text-sm text-zinc-400">RECIPE</p>
+              <h3 class="font-semibold">Taste & Cooking</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- RIGHT LOGIN CARD -->
+      <section
+        class="bg-zinc-900 rounded-2xl shadow-2xl p-8 max-w-md w-full mx-auto"
+      >
+        <h2 class="text-2xl font-semibold mb-6">Login to continue</h2>
+
+        <form id="loginForm" class="space-y-4">
+          <div>
+            <label class="text-sm text-zinc-400">Username</label>
+            <input
+              type="text"
+              id="username"
+              placeholder="kminchelle"
+              class="mt-1 w-full rounded-lg bg-zinc-800 border border-zinc-700 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            />
+          </div>
+
+          <div>
+            <label class="text-sm text-zinc-400">Password</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="••••••••"
+              class="mt-1 w-full rounded-lg bg-zinc-800 border border-zinc-700 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            />
+          </div>
+
+          <button
+            type="submit"
+            class="w-full mt-4 bg-indigo-600 hover:bg-indigo-500 transition rounded-lg py-2 font-medium"
+          >
+            Login
+          </button>
+        </form>
+
+        <p class="mt-6 text-xs text-zinc-500 text-center">
+          Blogs first. Recipes next. Protik is watching—keep it simple.
+        </p>
+      </section>
+    </main>
+  </body>
+  <script type="module" src="./src/js/auth/main.js"></script>
+</html>
