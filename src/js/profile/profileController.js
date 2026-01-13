@@ -369,6 +369,21 @@ export class ProfileController {
         window.location.replace("login.html");
       });
 
+      // Admin Dashboard Button
+
+      const adminBtn = document.createElement("button");
+      adminBtn.className =
+        "flex bg-indigo-500 py-2 px-4 rounded-lg mt-4 hover:bg-indigo-600 transition items-center mx-auto";
+      adminBtn.innerText = "← Admin Dashboard";
+
+      if(info.role && info.role.toLowerCase() !== "admin"){
+        adminBtn.className = "flex bg-indigo-500 py-2 px-4 rounded-lg mt-4 hover:bg-indigo-600 transition items-center mx-auto hidden"
+      }
+
+      adminBtn.addEventListener("click", () => {
+        window.location.href = "admin.html";
+      });
+
       //   footer text
 
       const p = document.createElement("p");
@@ -383,6 +398,7 @@ export class ProfileController {
       this.container.appendChild(postSection);
       this.container.appendChild(commentsContainer);
       this.container.appendChild(logoutBtn);
+      this.container.appendChild(adminBtn);
       this.container.appendChild(p);
     } catch (error) {
       showToast(error.message, "error");
