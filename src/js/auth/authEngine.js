@@ -34,12 +34,12 @@ export class LoginController {
       if (user) {
         showToast(`Welcome ${user.username}`, "success");
         setTimeout(() => {
-          window.location.replace("profile.html");
+          window.location.replace("blogs.html");
         }, 500);
       }
 
       if(this.authService.isLoggedIn()){
-        window.location.replace("profile.html");
+        window.location.replace("blogs.html");
       }
     } catch (error) {
       showToast(`${error.message}`, "error");
