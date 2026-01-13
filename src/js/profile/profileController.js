@@ -339,7 +339,6 @@ export class ProfileController {
 
       const commentsContainer = commentsSection.querySelector("div");
 
-      // userCmnts array iterate করে cards তৈরি করা
       userCmnts.forEach((cmnt) => {
         const card = document.createElement("div");
         card.className = "bg-zinc-900 p-4 rounded-xl shadow animate-slide";

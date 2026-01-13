@@ -69,7 +69,7 @@ export class BlogController {
 
       posts.forEach((post) => {
         const card = document.createElement("a");
-        card.href = "#";
+        card.href = `blog-details.html?id=${post.id}`;
         card.className =
           "block bg-zinc-900 rounded-2xl overflow-hidden shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-xl animate-fade mb-4";
 
