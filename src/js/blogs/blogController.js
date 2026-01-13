@@ -12,8 +12,6 @@ export class BlogController {
       window.location.replace("login.html");
     }
 
-    this.preventBack();
-
     window.addEventListener("DOMContentLoaded", () => {
       this.init();
     });
