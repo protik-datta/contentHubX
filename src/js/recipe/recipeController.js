@@ -103,7 +103,7 @@ export class RecipeContainer {
 
               <!-- Link -->
               <a
-                href="recipe-details.html"
+                href="recipe-details.html?id=${r.id}"
                 class="text-sm text-indigo-400 hover:underline"
               >
                 View Recipe →

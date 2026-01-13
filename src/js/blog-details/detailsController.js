@@ -54,6 +54,16 @@ export class DetailsController {
       article.className = "bg-zinc-900 rounded-2xl p-8 mb-8";
 
       article.innerHTML = `
+      <!-- Back Button -->
+  <button
+    onclick="history.back()"
+    class="mb-6 flex items-center gap-2 px-4 py-2 rounded-full
+           bg-zinc-900/80 backdrop-blur border border-zinc-700
+           text-sm text-zinc-200 hover:bg-zinc-800 hover:border-zinc-500 transition"
+  >
+    ← Back
+  </button>
+  
       <h1 class="text-3xl font-bold mb-2">${post.title}</h1>
       <p class="text-sm text-zinc-400 mb-6">
         By <span class="text-indigo-400">${userData.username}</span>

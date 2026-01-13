@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Admin Dashboard | ContentHub X</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            animation: {
+              fade: "fadeIn 0.8s ease-out",
+              float: "float 4s ease-in-out infinite",
+            },
+            keyframes: {
+              fadeIn: {
+                "0%": { opacity: 0, transform: "translateY(10px)" },
+                "100%": { opacity: 1, transform: "translateY(0)" },
+              },
+              float: {
+                "0%,100%": { transform: "translateY(0)" },
+                "50%": { transform: "translateY(-6px)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+
+  <body class="bg-zinc-950 text-zinc-100 min-h-screen">
+    <!-- Toast container -->
+    <div
+      id="toast-container"
+      class="fixed bottom-5 right-5 flex flex-col gap-3 z-50"
+    ></div>
+
+    <!-- Header -->
+    <header class="border-b border-zinc-800">
+      <div
+        class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <h1 class="text-xl font-semibold">
+          Admin Dashboard <span class="text-indigo-400">X</span>
+        </h1>
+        <nav class="flex items-center gap-6 text-sm text-zinc-400">
+          <a href="blogs.html" class="hover:text-white transition-colors">Blogs</a>
+          <a href="recipes.html" class="hover:text-white transition-colors">Recipes</a>
+          <a href="profile.html" class="ml-auto" id="navProfile">
+            <img
+              src="https://robohash.org/admin.png"
+              alt="Admin Profile"
+              class="w-10 h-10 rounded-full border-2 border-zinc-700 hover:border-indigo-400 transition-all"
+            />
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main class="max-w-7xl mx-auto px-6 py-10 animate-fade space-y-10">
+      <h2 class="text-3xl font-semibold mb-6">Overview Stats</h2>
+
+      <!-- Stats Cards -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div
+          class="bg-zinc-900 p-6 rounded-2xl shadow-md hover:shadow-xl transition transform hover:scale-105 animate-fade"
+        >
+          <h3 class="text-lg font-medium text-zinc-400 mb-2">Total Users</h3>
+          <p class="text-3xl font-bold text-white">0</p>
+        </div>
+        <div
+          class="bg-zinc-900 p-6 rounded-2xl shadow-md hover:shadow-xl transition transform hover:scale-105 animate-fade"
+        >
+          <h3 class="text-lg font-medium text-zinc-400 mb-2">Total Blogs</h3>
+          <p class="text-3xl font-bold text-white">0</p>
+        </div>
+        <div
+          class="bg-zinc-900 p-6 rounded-2xl shadow-md hover:shadow-xl transition transform hover:scale-105 animate-fade"
+        >
+          <h3 class="text-lg font-medium text-zinc-400 mb-2">Total Recipes</h3>
+          <p class="text-3xl font-bold text-white">0</p>
+        </div>
+        <div
+          class="bg-zinc-900 p-6 rounded-2xl shadow-md hover:shadow-xl transition transform hover:scale-105 animate-fade"
+        >
+          <h3 class="text-lg font-medium text-zinc-400 mb-2">Total Comments</h3>
+          <p class="text-3xl font-bold text-white">0</p>
+        </div>
+      </div>
+
+      <!-- Users Table -->
+      <section>
+        <h2 class="text-2xl font-semibold mb-4">All Users</h2>
+
+        <div class="overflow-x-auto">
+          <table class="min-w-full divide-y divide-zinc-800">
+            <thead>
+              <tr class="bg-zinc-900">
+                <th class="px-6 py-3 text-left text-sm font-medium text-zinc-400 uppercase tracking-wider">
+                  Username
+                </th>
+                <th class="px-6 py-3 text-left text-sm font-medium text-zinc-400 uppercase tracking-wider">
+                  Email
+                </th>
+                <th class="px-6 py-3 text-left text-sm font-medium text-zinc-400 uppercase tracking-wider">
+                  Role
+                </th>
+                <th class="px-6 py-3 text-left text-sm font-medium text-zinc-400 uppercase tracking-wider">
+                  Status
+                </th>
+                <th class="px-6 py-3 text-left text-sm font-medium text-zinc-400 uppercase tracking-wider">
+                  Actions
+                </th>
+              </tr>
+            </thead>
+            <tbody id="adminUsersTable" class="bg-zinc-950 divide-y divide-zinc-800 animate-fade">
+              <!-- User rows will be injected here -->
+              <tr class="text-zinc-400">
+                <td class="px-6 py-4">Loading...</td>
+                <td class="px-6 py-4">Loading...</td>
+                <td class="px-6 py-4">Loading...</td>
+                <td class="px-6 py-4">Loading...</td>
+                <td class="px-6 py-4">Loading...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </body>
+
+  <script type="module" src="./src/js/admin/main.js"></script>
+</html>

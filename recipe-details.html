@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Classic Margherita Pizza | ContentHub X</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-zinc-950 text-zinc-100 min-h-screen">
+    <!-- Header -->
+    <header class="border-b border-zinc-800">
+      <div
+        class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <h1 class="text-xl font-semibold">
+          ContentHub <span class="text-indigo-400">X</span>
+        </h1>
+        <nav class="flex items-center gap-6 text-sm text-zinc-400">
+          <a href="blogs.html" class="hover:text-white">Blogs</a>
+          <a href="recipes.html" class="text-white">Recipes</a>
+          <a href="profile.html" class="ml-auto" id="navProfile">
+            <img
+              src="https://robohash.org/emily.png"
+              class="w-10 h-10 rounded-full border-2 border-zinc-700 hover:border-indigo-400"
+            />
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main class="max-w-5xl mx-auto px-6 py-10" id="singleRecipeContainer">
+      <section
+        class="bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden shadow-lg"
+      >
+        <!-- Image -->
+        <img
+          src="https://cdn.dummyjson.com/recipe-images/1.webp"
+          alt="Classic Margherita Pizza"
+          class="w-full h-80 object-cover"
+        />
+
+        <div class="p-8 space-y-8">
+          <!-- Title -->
+          <div>
+            <h2 class="text-3xl font-semibold">Classic Margherita Pizza</h2>
+            <p class="text-zinc-400 text-sm mt-1">Italian • Dinner</p>
+          </div>
+
+          <!-- Stats -->
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+            <div class="bg-zinc-800/60 p-4 rounded-xl">
+              <p class="text-zinc-400">Prep Time</p>
+              <p class="font-medium">20 minutes</p>
+            </div>
+            <div class="bg-zinc-800/60 p-4 rounded-xl">
+              <p class="text-zinc-400">Cook Time</p>
+              <p class="font-medium">15 minutes</p>
+            </div>
+            <div class="bg-zinc-800/60 p-4 rounded-xl">
+              <p class="text-zinc-400">Difficulty</p>
+              <p class="font-medium">Easy</p>
+            </div>
+            <div class="bg-zinc-800/60 p-4 rounded-xl">
+              <p class="text-zinc-400">Rating</p>
+              <p class="font-medium">4.6 ★</p>
+            </div>
+          </div>
+
+          <!-- Extra Info -->
+          <div class="flex flex-wrap gap-3 text-sm">
+            <span class="px-3 py-1 rounded-full bg-zinc-800">
+              🍽 Servings: 4
+            </span>
+            <span class="px-3 py-1 rounded-full bg-zinc-800">
+              🔥 300 kcal / serving
+            </span>
+            <span class="px-3 py-1 rounded-full bg-zinc-800">
+              ⏱ Total: 35 minutes
+            </span>
+          </div>
+
+          <!-- Ingredients -->
+          <div>
+            <h3 class="text-xl font-semibold mb-3">Ingredients</h3>
+            <ul class="list-disc pl-6 space-y-1 text-zinc-300">
+              <li>Pizza dough</li>
+              <li>Tomato sauce</li>
+              <li>Fresh mozzarella cheese</li>
+              <li>Fresh basil leaves</li>
+              <li>Olive oil</li>
+              <li>Salt and pepper to taste</li>
+            </ul>
+          </div>
+
+          <!-- Instructions -->
+          <div>
+            <h3 class="text-xl font-semibold mb-3">Instructions</h3>
+            <ol class="list-decimal pl-6 space-y-2 text-zinc-300">
+              <li>Preheat the oven to 475°F (245°C).</li>
+              <li>Roll out the pizza dough on a floured surface.</li>
+              <li>Spread tomato sauce evenly over the dough.</li>
+              <li>Add fresh mozzarella slices.</li>
+              <li>Bake for 12–15 minutes until crust is golden.</li>
+              <li>Garnish with basil leaves and drizzle olive oil.</li>
+              <li>Season with salt and pepper, then serve hot.</li>
+            </ol>
+          </div>
+
+          <!-- Tags -->
+          <div class="flex flex-wrap gap-2 text-xs text-zinc-400">
+            <span class="px-3 py-1 rounded-full bg-zinc-800">Italian</span>
+            <span class="px-3 py-1 rounded-full bg-zinc-800">Pizza</span>
+            <span class="px-3 py-1 rounded-full bg-zinc-800">Vegetarian</span>
+            <span class="px-3 py-1 rounded-full bg-zinc-800">Dinner</span>
+          </div>
+
+        </div>
+      </section>
+    </main>
+  </body>
+  <script type="module" src="./src/js/recipe-details/main.js"></script>
+</html>
