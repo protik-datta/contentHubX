@@ -366,20 +366,8 @@ export class ProfileController {
 
       logoutBtn.addEventListener("click", () => {
         localStorage.removeItem("userInfo");
-
-        window.onpopstate = null;
-
         window.location.replace("login.html");
       });
-
-      // Prevent back navigation
-      window.history.pushState(null, null, window.location.href);
-      window.onpopstate = function () {
-        alert("You cannot go back to the previous page. Please logout first!");
-        window.history.pushState(null, null, window.location.href);
-      };
-
-      document.body.appendChild(logoutBtn);
 
       //   footer text
 
