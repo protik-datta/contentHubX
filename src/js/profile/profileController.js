@@ -376,8 +376,9 @@ export class ProfileController {
         "flex bg-indigo-500 py-2 px-4 rounded-lg mt-4 hover:bg-indigo-600 transition items-center mx-auto";
       adminBtn.innerText = "← Admin Dashboard";
 
-      if(info.role && info.role.toLowerCase() !== "admin"){
-        adminBtn.className = "flex bg-indigo-500 py-2 px-4 rounded-lg mt-4 hover:bg-indigo-600 transition items-center mx-auto hidden"
+      if (info.role && info.role.toLowerCase() !== "admin") {
+        adminBtn.className =
+          "flex bg-indigo-500 py-2 px-4 rounded-lg mt-4 hover:bg-indigo-600 transition items-center mx-auto hidden";
       }
 
       adminBtn.addEventListener("click", () => {
