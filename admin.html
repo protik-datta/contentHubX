@@ -69,7 +69,7 @@
       <h2 class="text-3xl font-semibold mb-6">Overview Stats</h2>
 
       <!-- Stats Cards -->
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" id="statsCards">
         <div
           class="bg-zinc-900 p-6 rounded-2xl shadow-md hover:shadow-xl transition transform hover:scale-105 animate-fade"
         >
@@ -122,12 +122,12 @@
                 <th
                   class="px-6 py-3 text-left text-sm font-medium text-zinc-400 uppercase tracking-wider"
                 >
-                  Status
+                  Phone
                 </th>
                 <th
                   class="px-6 py-3 text-left text-sm font-medium text-zinc-400 uppercase tracking-wider"
                 >
-                  Actions
+                  Country/City
                 </th>
               </tr>
             </thead>
@@ -136,13 +136,20 @@
               class="bg-zinc-950 divide-y divide-zinc-800 animate-fade"
             >
               <!-- User rows will be injected here -->
-              <tr class="text-zinc-400">
+              <!-- <tr class="text-zinc-400">
+                <td class="px-6 py-4">
+                  <a
+                    href="#"
+                    class="hover:underline text-zinc-300 hover:text-white transition"
+                    >Loading...</a
+                  >
+                </td>
                 <td class="px-6 py-4">Loading...</td>
                 <td class="px-6 py-4">Loading...</td>
                 <td class="px-6 py-4">Loading...</td>
                 <td class="px-6 py-4">Loading...</td>
-                <td class="px-6 py-4">Loading...</td>
-              </tr>
+              </tr> -->
+
             </tbody>
           </table>
         </div>
@@ -150,5 +157,5 @@
     </main>
   </body>
 
-  <script type="module" src="./src/adminPanel/js/admin/main.js"></script>
+  <script type="module" src="./src/js/adminPanel/admin/main.js"></script>
 </html>
