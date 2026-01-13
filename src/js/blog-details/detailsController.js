@@ -121,7 +121,7 @@ export class DetailsController {
       <form class="space-y-4" id="commentForm">
         <textarea
           class="w-full bg-zinc-800 border border-zinc-700 rounded-xl p-4 text-sm text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none"
-          rows="4"
+          rows="3"
           id="commentInput"
           placeholder="Write your comment here..."
         ></textarea>
