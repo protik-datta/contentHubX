@@ -33,6 +33,12 @@
   </head>
 
   <body class="bg-zinc-950 text-zinc-100 min-h-screen">
+    <!-- Toast container -->
+    <div
+      id="toast-container"
+      class="fixed bottom-5 right-5 flex flex-col gap-3 z-50"
+    ></div>
+
     <!-- Header -->
     <header class="border-b border-zinc-800">
       <div
@@ -50,7 +56,7 @@
           >
 
           <!-- Profile Image -->
-          <a href="profile.html" class="ml-auto">
+          <a href="profile.html" class="ml-auto" id="navProfile">
             <img
               src="https://robohash.org/emily.png"
               alt="Profile"
@@ -62,134 +68,10 @@
     </header>
 
     <!-- Main -->
-    <main class="max-w-6xl mx-auto px-6 py-10 space-y-10 animate-fade">
-      <!-- Profile Top -->
-      <section
-        class="bg-zinc-900 rounded-2xl p-8 flex flex-col md:flex-row gap-8 animate-slide"
-      >
-        <img
-          src="https://robohash.org/emily.png"
-          alt="Profile"
-          class="w-36 h-36 rounded-xl border border-zinc-800 object-cover"
-        />
-
-        <div class="flex-1">
-          <h2 class="text-3xl font-semibold">
-            Emily Johnson
-            <span class="text-sm text-indigo-400 ml-2">(Admin)</span>
-          </h2>
-          <p class="text-zinc-400 mt-1">emily.johnson@x.dummyjson.com</p>
-
-          <div class="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm">
-            <div class="bg-zinc-800 p-4 rounded-lg">
-              <p class="text-zinc-400">Username</p>
-              <p class="font-medium">emilys</p>
-            </div>
-            <div class="bg-zinc-800 p-4 rounded-lg">
-              <p class="text-zinc-400">Age</p>
-              <p class="font-medium">28</p>
-            </div>
-            <div class="bg-zinc-800 p-4 rounded-lg">
-              <p class="text-zinc-400">Gender</p>
-              <p class="font-medium">Female</p>
-            </div>
-            <div class="bg-zinc-800 p-4 rounded-lg">
-              <p class="text-zinc-400">Blood Group</p>
-              <p class="font-medium">O−</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Personal Details -->
-      <section class="grid md:grid-cols-2 gap-6">
-        <div class="bg-zinc-900 rounded-xl p-6 animate-slide">
-          <h3 class="font-semibold mb-4">Personal Info</h3>
-          <ul class="text-sm space-y-2 text-zinc-300">
-            <li>Birth Date: <span class="text-white">1996‑05‑30</span></li>
-            <li>Height: <span class="text-white">193.24 cm</span></li>
-            <li>Weight: <span class="text-white">63.16 kg</span></li>
-            <li>Eye Color: <span class="text-white">Green</span></li>
-            <li>Hair: <span class="text-white">Brown, Curly</span></li>
-          </ul>
-        </div>
-
-        <div class="bg-zinc-900 rounded-xl p-6 animate-slide">
-          <h3 class="font-semibold mb-4">Contact</h3>
-          <ul class="text-sm space-y-2 text-zinc-300">
-            <li>Phone: <span class="text-white">+81 965‑431‑3024</span></li>
-            <li>IP Address: <span class="text-white">42.48.100.32</span></li>
-            <li>MAC: <span class="text-white">47:fa:41:18:ec:eb</span></li>
-            <li>
-              Location:
-              <span class="text-white"> Phoenix, Mississippi, USA </span>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- Education & Work -->
-      <section class="grid md:grid-cols-2 gap-6">
-        <div class="bg-zinc-900 rounded-xl p-6 animate-slide">
-          <h3 class="font-semibold mb-4">Education</h3>
-          <p class="text-sm text-zinc-300">University of Wisconsin‑Madison</p>
-        </div>
-
-        <div class="bg-zinc-900 rounded-xl p-6 animate-slide">
-          <h3 class="font-semibold mb-4">Company</h3>
-          <ul class="text-sm space-y-2 text-zinc-300">
-            <li>
-              Name: <span class="text-white">Dooley, Kozey and Cronin</span>
-            </li>
-            <li>Department: <span class="text-white">Engineering</span></li>
-            <li>Title: <span class="text-white">Sales Manager</span></li>
-            <li>Office: <span class="text-white">San Francisco</span></li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- Finance & Crypto -->
-      <section class="grid md:grid-cols-2 gap-6">
-        <div class="bg-zinc-900 rounded-xl p-6 animate-slide">
-          <h3 class="font-semibold mb-4">Bank</h3>
-          <ul class="text-sm space-y-2 text-zinc-300">
-            <li>Card Expire: <span class="text-white">03/26</span></li>
-            <li>
-              Card Number: <span class="text-white">9289-7606-5548-1815</span>
-            </li>
-            <li>Card Type: <span class="text-white">Elo</span></li>
-            <li>Currency: <span class="text-white">CNY</span></li>
-            <li>
-              iban: <span class="text-white">YPUXISOBI7TTHPK2BR3HAIXL</span>
-            </li>
-          </ul>
-        </div>
-
-        <div class="bg-zinc-900 rounded-xl p-6 animate-slide">
-          <h3 class="font-semibold mb-4">Crypto</h3>
-          <ul class="text-sm space-y-2 text-zinc-300">
-            <li>Coin: <span class="text-white">Bitcoin</span></li>
-            <li>Network: <span class="text-white">Ethereum (ERC20)</span></li>
-            <li class="break-all">
-              Wallet:
-              <span class="text-white">
-                0xb9fc2fe63b2a6c003f1c324c3bfa53259162181a
-              </span>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <button
-        id="logoutBtn"
-        class="flex bg-red-500 py-2 px-4 rounded-lg mt-6 hover:bg-red-600 transition align-center mx-auto"
-      >
-        Log Out
-      </button>
-
-      <p class="text-center text-xs text-zinc-500 pt-8">
-        Blogs first. Recipes next.
-      </p>
-    </main>
+    <main
+      class="max-w-6xl mx-auto px-6 py-10 space-y-10 animate-fade"
+      id="profileContainer"
+    ></main>
   </body>
+  <script type="module" src="./src/js/profile/main.js"></script>
 </html>
