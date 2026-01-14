@@ -64,6 +64,35 @@
       </div>
     </header>
 
+    <!-- User Details Modal -->
+    <div
+      id="userModal"
+      class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50"
+    >
+      <div
+        class="bg-zinc-900 w-full max-w-4xl rounded-2xl shadow-xl overflow-hidden"
+      >
+        <!-- Header -->
+        <div
+          class="flex justify-between items-center px-6 py-4 border-b border-zinc-800"
+        >
+          <h2 class="text-xl font-semibold text-white">User Details</h2>
+          <button
+            onclick="closeUserModal()"
+            class="text-zinc-400 hover:text-white text-2xl"
+          >
+            &times;
+          </button>
+        </div>
+
+        <!-- Content -->
+        <div
+          id="userModalContent"
+          class="p-6 max-h-[75vh] overflow-y-auto text-zinc-300 space-y-6"
+        ></div>
+      </div>
+    </div>
+
     <!-- Main -->
     <main class="max-w-7xl mx-auto px-6 py-10 animate-fade space-y-10">
       <h2 class="text-3xl font-semibold mb-6">Overview Stats</h2>
@@ -149,7 +178,6 @@
                 <td class="px-6 py-4">Loading...</td>
                 <td class="px-6 py-4">Loading...</td>
               </tr> -->
-
             </tbody>
           </table>
         </div>
