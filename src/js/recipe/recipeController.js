@@ -30,7 +30,6 @@ export class RecipeContainer {
           <div class="h-4 w-full bg-zinc-700 rounded"></div>
           <div class="flex items-center justify-between pt-2">
             <div class="h-4 w-1/4 bg-zinc-700 rounded"></div>
-            <div class="h-4 w-6 bg-zinc-700 rounded"></div>
             <div class="h-4 w-1/4 bg-zinc-700 rounded"></div>
           </div>
         </div>
@@ -86,20 +85,6 @@ export class RecipeContainer {
               <span class="text-xs text-zinc-500">${
                 r.prepTimeMinutes || 30
               } min • ${r.cuisine || "Unknown"}</span>
-
-              <!-- Star Icon -->
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                class="text-gray-400 cursor-pointer favBtn"
-              >
-                <path
-                  d="M12 .587l3.668 7.568L24 9.423l-6 5.848L19.335 24 12 20.202 4.665 24 6 15.271 0 9.423l8.332-1.268z"
-                />
-              </svg>
 
               <!-- Link -->
               <a
