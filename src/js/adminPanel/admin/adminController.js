@@ -44,7 +44,7 @@ export class AdminUserController {
     await this.renderAllUsers();
   }
 
-  // Skeleton loader rows
+  // Skeleton loader 
   renderSkeleton(rows = 5) {
     const skeletonHTML = Array.from({ length: rows })
       .map(
@@ -70,7 +70,7 @@ export class AdminUserController {
 
       if (!users || users.length === 0) throw new Error("Users not found");
 
-      // Build HTML for all users
+      // HTML for all users
       const rowsHTML = users
         .map(
           (u) => `
@@ -87,7 +87,7 @@ export class AdminUserController {
       </tr>
     `
         )
-        .join(""); // join array into single string
+        .join("");
 
       // Set container HTML once
       this.container.innerHTML = rowsHTML;

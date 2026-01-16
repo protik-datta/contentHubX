@@ -10,14 +10,13 @@ export class RecipeContainer {
   }
 
   async init() {
-    this.showSkeleton(6); // Show 6 skeleton cards
+    this.showSkeleton(6); 
     await this.renderRecipe();
   }
 
-  // Function to show skeleton loaders
   showSkeleton(count) {
     const grid = this.recipeContainer.querySelector(".grid");
-    grid.innerHTML = ""; // Clear existing content
+    grid.innerHTML = "";
     for (let i = 0; i < count; i++) {
       const skeleton = document.createElement("div");
       skeleton.className =
@@ -44,10 +43,10 @@ export class RecipeContainer {
       const recipe = await this.recipeService.getRecipe();
 
       const grid = this.recipeContainer.querySelector(".grid");
-      grid.innerHTML = ""; // Clear skeletons
+      grid.innerHTML = ""; 
 
       recipe.forEach((r) => {
-        // Generate description dynamically
+
         const description = r.instructions?.length
           ? r.instructions[0]
           : r.tags?.length
