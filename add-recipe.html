@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Add Recipe | ContentHub X</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            animation: {
+              fade: "fadeIn 0.8s ease-out",
+            },
+            keyframes: {
+              fadeIn: {
+                "0%": { opacity: 0, transform: "translateY(10px)" },
+                "100%": { opacity: 1, transform: "translateY(0)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+
+  <body class="bg-zinc-950 text-zinc-100 min-h-screen">
+    <!-- Toast container -->
+    <div
+      id="toast-container"
+      class="fixed bottom-5 right-5 flex flex-col gap-3 z-50"
+    ></div>
+
+    <!-- Header -->
+    <header class="border-b border-zinc-800">
+      <div
+        class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <h1 class="text-xl font-semibold">
+          ContentHub <span class="text-indigo-400">X</span>
+        </h1>
+        <nav class="flex items-center gap-6 text-sm text-zinc-400">
+          <a href="blogs.html" class="hover:text-white">Blogs</a>
+          <a href="recipes.html" class="hover:text-white">Recipes</a>
+          <a href="profile.html" class="ml-auto" id="navProfile">
+            <img
+              src="https://robohash.org/admin.png"
+              alt="Admin Profile"
+              class="w-10 h-10 rounded-full border-2 border-zinc-700 hover:border-indigo-400 transition-all"
+            />
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Page Title -->
+    <section class="max-w-3xl mx-auto px-6 pt-10 pb-6 animate-fade">
+      <h2 class="text-3xl font-bold mb-2">Add New Recipe</h2>
+      <p class="text-zinc-400">
+        Fill in the details below to publish a new recipe.
+      </p>
+    </section>
+
+    <!-- Form -->
+    <main class="max-w-3xl mx-auto px-6 pb-16 animate-fade">
+      <form
+        id="recipeForm"
+        class="bg-zinc-900/60 border border-zinc-800 rounded-2xl p-8 space-y-6 shadow-xl"
+      >
+        <!-- Name -->
+        <div>
+          <label class="block mb-1 text-sm font-medium">Recipe Name</label>
+          <input
+            id="name"
+            required
+            class="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-2 focus:outline-none focus:border-indigo-500"
+          />
+        </div>
+
+        <!-- Image -->
+        <div>
+          <label class="block mb-1 text-sm font-medium">Image URL</label>
+          <input
+            id="image"
+            type="url"
+            class="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-2 focus:outline-none focus:border-indigo-500"
+          />
+        </div>
+
+        <!-- Times -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div>
+            <label class="block mb-1 text-sm">Prep Time (min)</label>
+            <input id="prepTime" type="number" class="input" />
+          </div>
+          <div>
+            <label class="block mb-1 text-sm">Cook Time (min)</label>
+            <input id="cookTime" type="number" class="input" />
+          </div>
+          <div>
+            <label class="block mb-1 text-sm">Servings</label>
+            <input id="servings" type="number" class="input bg-red-950" />
+          </div>
+        </div>
+
+        <!-- Meta -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div>
+            <label class="block mb-1 text-sm">Difficulty</label>
+            <select id="difficulty" class="input">
+              <option>Easy</option>
+              <option>Medium</option>
+              <option>Hard</option>
+            </select>
+          </div>
+          <div>
+            <label class="block mb-1 text-sm">Cuisine</label>
+            <input id="cuisine" class="input" />
+          </div>
+          <div>
+            <label class="block mb-1 text-sm">Calories / Serving</label>
+            <input id="calories" type="number" class="input" />
+          </div>
+        </div>
+
+        <!-- Ingredients -->
+        <div>
+          <label class="block mb-1 text-sm">
+            Ingredients <span class="text-zinc-500">(one per line)</span>
+          </label>
+          <textarea
+            id="ingredients"
+            class="textarea resize-none"
+            rows="4"
+          ></textarea>
+        </div>
+
+        <!-- Instructions -->
+        <div>
+          <label class="block mb-1 text-sm">
+            Instructions <span class="text-zinc-500">(one step per line)</span>
+          </label>
+          <textarea
+            id="instructions"
+            class="textarea resize-none"
+            rows="4"
+          ></textarea>
+        </div>
+
+        <!-- Tags -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block mb-1 text-sm">Tags</label>
+            <input id="tags" placeholder="Pizza, Italian" class="input" />
+          </div>
+          <div>
+            <label class="block mb-1 text-sm">Meal Type</label>
+            <input id="mealType" placeholder="Dinner" class="input" />
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="flex justify-end gap-4 pt-4">
+          <a
+            href="recipes.html"
+            class="px-5 py-2 rounded-lg border border-zinc-700 text-zinc-300 hover:bg-zinc-800 transition"
+          >
+            Cancel
+          </a>
+          <button
+            type="submit"
+            class="px-6 py-2 rounded-lg bg-indigo-500 hover:bg-indigo-600 transition font-medium"
+            id="add-recipe"
+          >
+            Save Recipe
+          </button>
+        </div>
+      </form>
+    </main>
+
+    <!-- Helpers -->
+    <style>
+      .input {
+        width: 100%;
+        background: #020617;
+        border: 1px solid #27272a;
+        border-radius: 0.5rem;
+        padding: 0.5rem 0.75rem;
+        outline: none;
+      }
+      .input:focus {
+        border-color: #020617;
+      }
+      .textarea {
+        width: 100%;
+        min-height: 100px;
+        background: #020617;
+        border: 1px solid #27272a;
+        border-radius: 0.5rem;
+        padding: 0.75rem;
+        outline: none;
+      }
+      .textarea:focus {
+        border-color: #6366f1;
+      }
+    </style>
+  </body>
+  <script type="module" src="./src/js/add-recipe/main.js"></script>
+</html>
