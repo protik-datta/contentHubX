@@ -36,7 +36,9 @@ export class AddRecipeController {
 
     const storedRecipes = JSON.parse(localStorage.getItem("recipes")) || [];
     const lastId =
-      storedRecipes.length > 0 ? storedRecipes[storedRecipes.length - 1].id : 0;
+      storedRecipes.length > 0
+        ? storedRecipes[storedRecipes.length - 1].id
+        : 99;
 
     return {
       id: lastId + 1,
@@ -80,6 +82,9 @@ export class AddRecipeController {
 
       showToast("Recipe added successfully", "success");
       this.form.reset();
+      setInterval(() => {
+        window.location.href = "recipes.html";
+      }, 2000);
     } catch (error) {
       showToast(error.message, "error");
     } finally {

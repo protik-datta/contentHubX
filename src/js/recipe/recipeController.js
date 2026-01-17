@@ -10,7 +10,7 @@ export class RecipeContainer {
   }
 
   async init() {
-    this.showSkeleton(6); 
+    this.showSkeleton(6);
     await this.renderRecipe();
   }
 
@@ -40,20 +40,24 @@ export class RecipeContainer {
 
   async renderRecipe() {
     try {
-      const recipe = await this.recipeService.getRecipe();
+      // API recipes
+      const apiRecipes = await this.recipeService.getRecipe();
+
+      // Local recipes
+      const localRecipes = JSON.parse(localStorage.getItem("recipes")) || [];
+
+      const recipes = [...localRecipes, ...apiRecipes];
 
       const grid = this.recipeContainer.querySelector(".grid");
-      grid.innerHTML = ""; 
+      grid.innerHTML = "";
 
-      recipe.forEach((r) => {
-
+      recipes.forEach((r) => {
         const description = r.instructions?.length
           ? r.instructions[0]
           : r.tags?.length
           ? r.tags.join(", ")
           : `${r.cuisine} • ${r.difficulty}`;
 
-        // Create article card
         const article = document.createElement("article");
         article.className =
           "bg-zinc-900 rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-300 shadow-md hover:shadow-xl";

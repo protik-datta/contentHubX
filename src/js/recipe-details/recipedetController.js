@@ -144,7 +144,7 @@ export class SingleRecipeController {
       </div>
       <div class="bg-zinc-800/60 p-4 rounded-xl">
         <p class="text-zinc-400">Rating</p>
-        <p class="font-medium">${res.rating} ★</p>
+        <p class="font-medium">${res.rating || 0} ★</p>
       </div>
     </div>
 
